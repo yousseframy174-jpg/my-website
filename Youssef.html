@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>youssef....</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>yala nebtedy</h1>
+     
+    <input type="text" id="username" placeholder="Username">
+<input type="password" id="password" placeholder="Password">
+
+<button onclick="login()">Login</button>
+
+<p id="message"></p>
+
+<a href="signup.html">Create new account</a>
+
+<script>
+  function login() {
+  var user = document.getElementById("username").value;
+  var pass = document.getElementById("password").value;
+
+  var savedUser = localStorage.getItem("username");
+  var savedPass = localStorage.getItem("password");
+
+  if (!savedUser || !savedPass) {
+    document.getElementById("message").innerText = "❌ No account found! Please create an account first.";
+    return;
+  }
+
+  if (user === savedUser && pass === savedPass) {
+    window.location.href = "dashboard.html";
+  } else {
+    document.getElementById("message").innerText = "❌ Wrong username or password";
+  }
+}
+</script>
+    
+
+
+
+</body>
+</html>
+body {
+  background: linear-gradient(135deg, #4e54c8, #8f94fb);
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background: white;
+  padding: 30px;
+  width: 300px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.container h1 {
+  margin-bottom: 20px;
+  color: #4e54c8;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  margin-top: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button[type="submit"] {
+  background: #4e54c8;
+  color: white;
+}
+
+button.signup {
+  background: #eee;
+}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Youssef</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Create Account</h1>
+
+    <input type="text" id="newUser" placeholder="Username">
+    <input type="password" id="newPass" placeholder="Password">
+
+    <button onclick="createAccount()">Create Account</button>
+
+    <p id="msg"></p>
+
+    <a href="youssef.html">Already have an account? Login</a>
+  </div>
+
+<script>
+  function createAccount() {
+    var user = document.getElementById("newUser").value;
+    var pass = document.getElementById("newPass").value;
+
+    if (user === "" || pass === "") {
+      document.getElementById("msg").innerText = "❌ Fill all fields";
+      return;
+    }
+
+    localStorage.setItem("username", user);
+    <input type="password" id="password" placeholder="Password">
+
+<label>
+  <input type="checkbox" onclick="togglePassword()">
+  Show Password
+</label>
+
+    document.getElementById("msg").innerText = "✅ Account Created Successfully!";
+  }
+</script>
+<script>
+  function togglePassword() {
+    var pass = document.getElementById("password");
+
+    if (pass.type === "password") {
+      pass.type = "text";
+    } else {
+      pass.type = "password";
+    }
+  }
+</script>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Yo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Welcome!</h1>
+    <p>You are logged in successfully 🎉</p>
+    <button onclick="logout()">Logout</button>
+  </div>
+
+<script>
+  function logout() {
+    // يمسح البيانات المؤقتة ويوديك للصفحة الرئيسية
+    // لو عايز تمسح البيانات استخدم: localStorage.clear();
+    window.location.href = "youssef.html";
+  }
+</script>
+
+</body>
+</html>
