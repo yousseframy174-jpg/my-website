@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Yo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Welcome!</h1>
+    <p>You are logged in successfully 🎉</p>
+    <button onclick="logout()">Logout</button>
+  </div>
+
+<script>
+  function logout() {
+    // يمسح البيانات المؤقتة ويوديك للصفحة الرئيسية
+    // لو عايز تمسح البيانات استخدم: localStorage.clear();
+    window.location.href = "youssef.html";
+  }
+</script>
+
+</body>
+</html>

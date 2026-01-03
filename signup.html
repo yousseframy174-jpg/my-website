@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Youssef</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Create Account</h1>
+
+    <input type="text" id="newUser" placeholder="Username">
+    <input type="password" id="newPass" placeholder="Password">
+
+    <button onclick="createAccount()">Create Account</button>
+
+    <p id="msg"></p>
+
+    <a href="youssef.html">Already have an account? Login</a>
+  </div>
+
+<script>
+  function createAccount() {
+    var user = document.getElementById("newUser").value;
+    var pass = document.getElementById("newPass").value;
+
+    if (user === "" || pass === "") {
+      document.getElementById("msg").innerText = "❌ Fill all fields";
+      return;
+    }
+
+    localStorage.setItem("username", user);
+    <input type="password" id="password" placeholder="Password">
+
+<label>
+  <input type="checkbox" onclick="togglePassword()">
+  Show Password
+</label>
+
+    document.getElementById("msg").innerText = "✅ Account Created Successfully!";
+  }
+</script>
+<script>
+  function togglePassword() {
+    var pass = document.getElementById("password");
+
+    if (pass.type === "password") {
+      pass.type = "text";
+    } else {
+      pass.type = "password";
+    }
+  }
+</script>
+</body>
+</html>
